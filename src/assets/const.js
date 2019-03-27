@@ -6,5 +6,7 @@ exports.URL = {
   BASE_URL: BASE_URL,
   LIST: `${BASE_URL}/api/list`,
   USER: `${BASE_URL}/user`,
-  TEST_API: `${BASE_URL}/test_api`
+  TEST_API: `${BASE_URL}/test_api`,
+  SEND_DATA: `${BASE_URL}/sendData`,
+  GET_DATA: `${BASE_URL}/getData`,
 }

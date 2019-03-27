@@ -11,6 +11,20 @@ function test_api(){
     })
   })  
 }
+function send(data){
+  return new Promise((resolve, reject) => {
+    httpServer({
+      url: URL.SEND_DATA,
+      method: 'post',
+      data,
+    }).then(res => {
+      resolve(res)
+    }).catch(err => {
+      reject(new Error(err))
+    })
+  })
+}
 export {
   test_api,
+  send
 }
