@@ -41,7 +41,6 @@
         let data = {
           data: this.sendData
         };
-        console.log(data)
         send(data).then(res => {
           console.log(res);
         })

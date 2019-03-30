@@ -4,22 +4,28 @@ const httpServer = (opts) => {
   let httpOpts = {
     method: opts.method || 'get',
     url: opts.url || '',
-    param: opts.data,
+    params: opts.data,
     headers: {
       "Content-Type": "application/json; charset=UTF-8"
     }
-  }
+  };
   if(!opts.data){
-    delete httpOpts.param;
+    delete httpOpts.data;
   }
-  let promise = new Promise((resolve, reject) => {
-    axios(httpOpts).then( res => {
-      res.status === 200 ? resolve(res.data) : reject(new Error(res.msg))
-      // res.code === 0 ? resolve(res.data) : reject(new Error(res.msg));
-    }).catch(err => {
-      reject(new Error(err.message))
+ let promise = null;
+  if(httpOpts.method === 'post'){
+    promise = new Promise((resolve, reject) => {
+      axios.post(httpOpts.url, httpOpts.params).then( res => {
+        res.status === 200 ? resolve(res.data) : reject(new Error(res.msg))
+      })
     })
-  })
-  return promise;
+  }else{
+    promise = new Promise((resolve, reject) => {
+      axios.get(httpOpts.url, httpOpts.params || '').then( res => {
+        res.status === 200 ? resolve(res.data) : reject(new Error(res.msg))
+      })
+    })
+  }
+  return promise
 }
 export default httpServer;

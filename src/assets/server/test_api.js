@@ -9,10 +9,18 @@ function test_api(){
     }).catch(err => {
       reject(new Error(err))
     })
-  })  
+  })
 }
 function send(data){
+  console.log('data', data)
   return new Promise((resolve, reject) => {
+    /*fetch(URL.SEND_DATA, {
+      method: 'POST',
+      body: JSON.stringify(data)
+    }).then(function(response) {
+      resolve(response);
+      console.log(response);
+    })*/
     httpServer({
       url: URL.SEND_DATA,
       method: 'post',
