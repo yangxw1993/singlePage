@@ -9,7 +9,7 @@
         <div class="">接收到的数据：{{getData}}</div>
       </div>
       <van-button type="primary" @click="send">发送</van-button>
-      <van-button type="primary">获取</van-button>
+      <van-button type="primary" @click="get">获取</van-button>
       <!-- <h1>{{msg}}</h1> -->
       <router-link to="/user/login"><Button type="primary">去登录</Button></router-link>
       <router-link to="/user/register"><Button type="primary">去注册</Button></router-link>
@@ -20,8 +20,7 @@
 </template>
 
 <script>
-  import httpServer from '../assets/utils/httpServer.js'
-  import { test_api, send } from '../assets/server/test_api.js'
+  import { test_api, send, getData } from '../assets/server/test_api.js'
   export default {
     name: 'hello',
     data() {
@@ -32,17 +31,20 @@
       }
     },
     created: function () {
-      test_api().then(res => {
-        console.log(res)
-      })
+      test_api().then(res => {})
     },
     methods: {
       send() {
-        let data = {
+        let sendData = {
           data: this.sendData
         };
-        send(data).then(res => {
-          console.log(res);
+        send(sendData).then(res => {
+          alert('已发送')
+        })
+      },
+      get(){
+        getData().then(res => {
+          this.getData = res.data;
         })
       }
     }

@@ -12,15 +12,7 @@ function test_api(){
   })
 }
 function send(data){
-  console.log('data', data)
   return new Promise((resolve, reject) => {
-    /*fetch(URL.SEND_DATA, {
-      method: 'POST',
-      body: JSON.stringify(data)
-    }).then(function(response) {
-      resolve(response);
-      console.log(response);
-    })*/
     httpServer({
       url: URL.SEND_DATA,
       method: 'post',
@@ -32,7 +24,20 @@ function send(data){
     })
   })
 }
+function getData(){
+  return new Promise((resolve, reject) => {
+    httpServer({
+      url: URL.GET_DATA,
+    }).then(res => {
+      res.code === 0 ? resolve(res.data) : reject(res.msg);
+      console.log(res.data,'res****')
+    }).catch(err => {
+      reject(new Error(err.msg))
+    })
+  })
+}
 export {
   test_api,
-  send
+  send,
+  getData
 }
