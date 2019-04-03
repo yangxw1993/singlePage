@@ -9,8 +9,11 @@
         <div class="">接收到的数据：{{getData}}</div>
       </div>
       <van-button type="primary" @click="send">发送</van-button>
-      <van-button type="primary" @click="get">获取</van-button>
-      <!-- <h1>{{msg}}</h1> -->
+      <van-button type="info" @click="get">获取</van-button>
+      <div class="btn-wrapper">
+        <van-button type="primary" @click="login">登录</van-button>
+        <van-button type="info" @click="register">注册</van-button>
+      </div>
       <router-link to="/user/login"><Button type="primary">去登录</Button></router-link>
       <router-link to="/user/register"><Button type="primary">去注册</Button></router-link>
       <router-link to="/list"><Button type="primary">列表页面</Button></router-link>
@@ -35,17 +38,24 @@
     },
     methods: {
       send() {
+        if(!this.sendData){
+          this.$toast('请填写数据');
+          return;
+        }
         let sendData = {
           data: this.sendData
         };
-        send(sendData).then(res => {
-          alert('已发送')
-        })
+        send(sendData).then(res => this.$toast('已发送'))
       },
       get(){
-        getData().then(res => {
-          this.getData = res.data;
-        })
+        getData().then(res => this.getData = res.data)
+      },
+      // 登录
+      login(){
+        this.$router.push({path:'/user/login'});
+      },
+      register(){
+        this.$router.push({path:'/user/register'});
       }
     }
 
@@ -59,10 +69,13 @@
     line-height: 90px;
     background: #ccc;
     text-align: center;
+    overflow: hidden
   }
-
   .main {
     margin: 20px auto;
     width: 80%;
+  }
+  .btn-wrapper{
+    margin-top: 30px;
   }
 </style>

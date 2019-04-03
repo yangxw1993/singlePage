@@ -30,7 +30,6 @@ function getData(){
       url: URL.GET_DATA,
     }).then(res => {
       res.code === 0 ? resolve(res.data) : reject(res.msg);
-      console.log(res.data,'res****')
     }).catch(err => {
       reject(new Error(err.msg))
     })
