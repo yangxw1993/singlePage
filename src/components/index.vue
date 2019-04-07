@@ -17,6 +17,7 @@
       <router-link to="/user/login"><Button type="primary">去登录</Button></router-link>
       <router-link to="/user/register"><Button type="primary">去注册</Button></router-link>
       <router-link to="/list"><Button type="primary">列表页面</Button></router-link>
+      <router-link to="/demo/canvasEight"><Button type="primary">canvas</Button></router-link>
     </div>
 
   </div>

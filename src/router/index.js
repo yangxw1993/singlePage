@@ -4,6 +4,7 @@ import Login from '@/components/user/login'
 import Register from '@/components/user/register'
 import Index from '@/components/index'
 import List from '@/components/list'
+import CanvasEight from '@/components/demo/CanvasEight'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/user/register',
       name: 'Register',
       component: Register
+    },
+    {
+      path: '/demo/CanvasEight',
+      name: 'CanvasEight',
+      component: CanvasEight
     }
   ]
 })
