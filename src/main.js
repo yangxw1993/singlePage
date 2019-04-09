@@ -6,12 +6,12 @@ import router from './router'
 import axios from 'axios';
 import VueRouter from 'vue-router';
 
-import { Button, Field, Toast } from 'vant'
+import { Button, Field, Toast, NavBar } from 'vant'
 import 'vant/lib/index.css';
 
 Vue.config.productionTip = false
 Vue.use(VueRouter);
-Vue.use(Button, Field, Toast)
+Vue.use(Button, Field, Toast, NavBar )
 
 Vue.prototype.$request = axios;   // 全局使用axios
 
