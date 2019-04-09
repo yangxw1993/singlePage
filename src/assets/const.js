@@ -9,4 +9,5 @@ exports.URL = {
   TEST_API: `${BASE_URL}/test_api`,
   SEND_DATA: `${BASE_URL}/sendData`,
   GET_DATA: `${BASE_URL}/getData`,
+  REGISTER_POST: `${BASE_URL}/register`,
 }
