@@ -34,15 +34,18 @@
           r: 100, // 半径
           PI: Math.PI,
           color:{
-            yin: '#000',
-            yang: '#fff'
+            yin: '#fff',
+            yang: '#000'
           }
         };
         let myCanvas = document.getElementById('myCanvas');
         let ctx = myCanvas.getContext('2d');
         // 绘制空心圆
+
         ctx.beginPath();
+        ctx.fillStyle = circle.color.yang;
         ctx.arc(circle.x, circle.y, circle.r, 0, circle.PI * 2);
+        ctx.fill();
         ctx.stroke();
         // 绘制半黑半白
         ctx.fillStyle = circle.color.yin;
