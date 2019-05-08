@@ -25,24 +25,7 @@
       @click-icon="username=''"
       :error-message="passErr"
     />
-
-    <van-field
-      v-model="password2"
-      type="password"
-      required
-      clearable
-      label="重复密码"
-      placeholder="请重复输入密码"
-      @click-icon="username=''"
-      :error-message="passErr"
-    />
-    <van-field
-      v-model="describe"
-      label="个人签名"
-      placeholder="请输入个人签名"
-    />
-    <van-button type="primary" @click="registerFn">立即注册</van-button>
-    <van-button type="danger" @click="registerResetBtn">重置</van-button>
+    <van-button type="primary" size="large" @click="registerFn">登录</van-button>
   </div>
 </template>
 
@@ -100,16 +83,6 @@ export default {
 
        if( _registerObj.password === '' ){
          this.passErr = '密码不能为空';
-         return false;
-       }
-
-       if( _registerObj.password2 === '' ){
-         this.passErr2 = '重复密码不能为空';
-         return false;
-       }
-
-       if( _registerObj.password !== _registerObj.password2 ){
-         this.passErr2 = '重复密码不一致';
          return false;
        }
 
