@@ -11,9 +11,13 @@ import 'vant/lib/index.css';
 
 Vue.config.productionTip = false
 Vue.use(VueRouter);
-Vue.use(Button, Field, Toast, NavBar )
+/* 全局注册组件 */
+Vue.use(Button, Toast);
+Vue.component(NavBar.name, NavBar); // 导航栏
+Vue.component(Field.name, Field); // 文本框
 
-Vue.prototype.$request = axios;   // 全局使用axios
+/* 全局使用axios */
+Vue.prototype.$request = axios;  
 
 const route = new VueRouter({
   mode:'hash',

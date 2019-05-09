@@ -45,20 +45,18 @@
       <van-button type="primary" size="large" @click="registerFn">立即注册</van-button>
     </div>
     <div class="btn">
+      <van-button type="primary" size="large" @click="goLogin">去登陆</van-button>
+    </div>
+    <div class="btn">
       <van-button type="danger" size="large" @click="registerResetBtn">重置</van-button>
     </div>
   </div>
 </template>
 
 <script>
-  import {NavBar,Field} from 'vant'
   import { uerRegister } from '../../assets/server/user'
 export default {
   name: 'login',
-  components:{
-    [NavBar.name]: NavBar,
-    [Field.name]: Field
-  },
   data () {
     return {
       msg:'注册页面',
@@ -68,8 +66,8 @@ export default {
       password2:'',
       describe: '',
 
-      userErr:'用户名不能为空',
-      passErr:'密码不能为空',
+      userErr:'',
+      passErr:'',
       formData: {
         userName: '',
         password: ''
@@ -77,6 +75,7 @@ export default {
     }
   },
   created: function(){
+    ;
   },
    methods: {
      goBackFn(){
@@ -117,10 +116,17 @@ export default {
          return false;
        }
        uerRegister(_registerObj).then(res => {
-
+         this.$toast(res)
        }).catch(err => console.log(err,'err'))
      },
-     registerResetBtn(){}
+     registerResetBtn(){
+       let curValue = '';
+       this.username = this.password = this.password2 = this.describe = curValue;
+     },
+     // 去登陆
+     goLogin(){
+      this.$router.replace({path:'/user/login'})  
+     }
    }
 }
 </script>
