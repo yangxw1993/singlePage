@@ -9,7 +9,7 @@ function uerRegister(data){
       method: 'post',
       data,
     }).then(res => {
-      res.code === 0 ? resolve(res.msg) : reject(new Error(res.msg))
+      res.code === 0 ? resolve(res.msg) : reject(res.msg)
     }).catch(err => {
       reject(new Error(err))
     })

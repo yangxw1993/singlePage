@@ -6,18 +6,19 @@ import router from './router'
 import axios from 'axios';
 import VueRouter from 'vue-router';
 
-import { Button, Field, Toast, NavBar } from 'vant'
+import { Button, Field, Toast, NavBar, Loading } from 'vant'
 import 'vant/lib/index.css';
 
 Vue.config.productionTip = false
 Vue.use(VueRouter);
 /* 全局注册组件 */
 Vue.use(Button, Toast);
+Vue.component(Loading.name, Loading); // loading
 Vue.component(NavBar.name, NavBar); // 导航栏
 Vue.component(Field.name, Field); // 文本框
 
 /* 全局使用axios */
-Vue.prototype.$request = axios;  
+Vue.prototype.$request = axios;
 
 const route = new VueRouter({
   mode:'hash',

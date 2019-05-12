@@ -50,6 +50,7 @@
     <div class="btn">
       <van-button type="danger" size="large" @click="registerResetBtn">重置</van-button>
     </div>
+    <van-loading />
   </div>
 </template>
 
@@ -61,10 +62,10 @@ export default {
     return {
       msg:'注册页面',
 
-      username:'',
-      password:'',
-      password2:'',
-      describe: '',
+      username:'杨小伟',
+      password:'123',
+      password2:'123',
+      describe: '123',
 
       userErr:'',
       passErr:'',
@@ -115,9 +116,10 @@ export default {
          this.passErr2 = '重复密码不一致';
          return false;
        }
+       console.log(_registerObj);
        uerRegister(_registerObj).then(res => {
          this.$toast(res)
-       }).catch(err => console.log(err,'err'))
+       }).catch(err => this.$toast.fail(err))
      },
      registerResetBtn(){
        let curValue = '';
@@ -125,7 +127,7 @@ export default {
      },
      // 去登陆
      goLogin(){
-      this.$router.replace({path:'/user/login'})  
+      this.$router.replace({path:'/user/login'})
      }
    }
 }
