@@ -1,17 +1,24 @@
 <template>
   <div id="app">
     <router-view></router-view>
+    <loading v-if="LOADING"></loading>
   </div>
 </template>
 
 <script>
+  import { mapState } from 'vuex'
 import Login from './components/user/login'
 import Index from './components/index'
+import Loading from './components/loading/loading'
 export default {
   name: 'App',
   components:{
     Index,
     Login,
+    Loading
+  },
+  computed:{
+    ...mapState(['LOADING'])
   },
   methods:{
     goLogin(){

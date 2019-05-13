@@ -5,13 +5,15 @@ import App from './App'
 import router from './router'
 import axios from 'axios';
 import VueRouter from 'vue-router';
-
+import Vuex from 'vuex';
 import { Button, Field, Toast, NavBar, Loading } from 'vant'
 import 'vant/lib/index.css';
 import '../static/css/main.scss';
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 Vue.use(VueRouter);
+
+import store from './store'
 /* 全局注册组件 */
 Vue.use(Button, Toast);
 Vue.component(Loading.name, Loading); // loading
@@ -29,6 +31,7 @@ const route = new VueRouter({
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
