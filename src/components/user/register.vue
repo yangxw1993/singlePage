@@ -41,16 +41,15 @@
       label="个人签名"
       placeholder="请输入个人签名"
     />
-    <div class="btn">
+    <div class="btn margin-t-10">
       <van-button type="primary" size="large" @click="registerFn">立即注册</van-button>
     </div>
-    <div class="btn">
+    <div class="btn margin-t-10">
       <van-button type="primary" size="large" @click="goLogin">去登陆</van-button>
     </div>
-    <div class="btn">
+    <div class="btn margin-t-10">
       <van-button type="danger" size="large" @click="registerResetBtn">重置</van-button>
     </div>
-    <van-loading />
   </div>
 </template>
 
@@ -138,9 +137,6 @@ export default {
 .register{
   margin: 30px auto;
   width: 95%;
-  .btn{
-    margin: 20px 0;
-  }
 }
 
 </style>

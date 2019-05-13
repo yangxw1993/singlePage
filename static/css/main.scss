@@ -1,0 +1,99 @@
+.margin-t-10{
+  margin-top: 10px;
+}
+.margin-t-20{
+  margin-top: 20px;
+}
+.margin-t-30{
+  margin-top: 30px;
+}
+.margin-t-40{
+  margin-top: 40px;
+}
+.margin-t-50{
+  margin-top: 50px;
+}
+.margin-l-10{
+  margin-top: 10px;
+}
+.margin-l-20{
+  margin-top: 20px;
+}
+.margin-l-30{
+  margin-top: 30px;
+}
+.margin-l-40{
+  margin-top: 40px;
+}
+.margin-l-50{
+  margin-top: 50px;
+}
+.margin-r-10{
+  margin-top: 10px;
+}
+.margin-r-20{
+  margin-top: 20px;
+}
+.margin-r-30{
+  margin-top: 30px;
+}
+.margin-r-40{
+  margin-top: 40px;
+}
+.margin-r-50{
+  margin-top: 50px;
+}
+.margin-b-10{
+  margin-top: 10px;
+}
+.margin-b-20{
+  margin-top: 20px;
+}
+.margin-b-30{
+  margin-top: 30px;
+}
+.margin-b-40{
+  margin-top: 40px;
+}
+.margin-b-50{
+  margin-top: 50px;
+}
+$center: center;
+.text-c{
+  text-align: $center;
+}
+.text-l{
+  text-align: left;
+}
+.text-r{
+  text-align: right;
+}
+
+.display-flex{
+  display: flex;
+}
+
+.flex-start{
+  // 继承
+  @extend .display-flex;
+  justify-content: flex-start;
+  align-items: $center;
+}
+.flex-around{
+  @extend .display-flex;
+  justify-content: space-around;
+  align-items: $center;
+}
+.flex-bet{
+  @extend .display-flex;
+  justify-content: space-between;
+  align-items: $center;
+}
+.flex-center{
+  @extend .display-flex;
+  justify-content: center;
+  align-items: $center;
+}
+.flex-column{
+  flex-direction: column;
+}

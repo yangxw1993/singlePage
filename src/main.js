@@ -8,6 +8,7 @@ import VueRouter from 'vue-router';
 
 import { Button, Field, Toast, NavBar, Loading } from 'vant'
 import 'vant/lib/index.css';
+import '../static/css/main.scss';
 
 Vue.config.productionTip = false
 Vue.use(VueRouter);
