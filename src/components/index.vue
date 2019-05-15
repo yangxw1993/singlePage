@@ -10,7 +10,7 @@
       </div>
       <van-button type="primary" @click="send">发送</van-button>
       <van-button type="info" @click="get">获取</van-button>
-      <div class="btn-wrapper">
+      <div class="btn-wrapper margin-t-10">
         <van-button type="primary" @click="login">登录</van-button>
         <van-button type="info" @click="register">注册</van-button>
       </div>
@@ -19,7 +19,9 @@
       <router-link to="/list"><Button type="primary">列表页面</Button></router-link>
       <router-link to="/demo/canvasEight"><Button type="primary">canvas</Button></router-link>
     </div>
-
+    <div class="margin-t-10">
+      <van-button type="primary" @click="showLoading">显示</van-button>
+    </div>
   </div>
 </template>
 
@@ -57,6 +59,14 @@
       },
       register(){
         this.$router.push({path:'/user/register'});
+      },
+
+      showLoading(){
+        this.$store.store.state.LOADING = true;
+        setTimeout(() => {
+          console.log(123)
+          this.$store.store.state.LOADING = false;
+        }, 3000)
       }
     }
 

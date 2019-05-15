@@ -6,7 +6,6 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
 import Login from './components/user/login'
 import Index from './components/index'
 import Loading from './components/loading/loading'
@@ -18,7 +17,9 @@ export default {
     Loading
   },
   computed:{
-    ...mapState(['LOADING'])
+    LOADING(){
+      return this.$store.store.state.LOADING
+    }
   },
   methods:{
     goLogin(){
