@@ -10,7 +10,7 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .loading{
   position: fixed;
   left: 0;

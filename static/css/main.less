@@ -58,9 +58,9 @@
 .margin-b-50{
   margin-top: 50px;
 }
-$center: center;
+@center: center;
 .text-c{
-  text-align: $center;
+  text-align: @center;
 }
 .text-l{
   text-align: left;
@@ -71,28 +71,26 @@ $center: center;
 
 .display-flex{
   display: flex;
+  align-items: @center;
 }
 
 .flex-start{
   // 继承
-  @extend .display-flex;
+  .display-flex;
   justify-content: flex-start;
-  align-items: $center;
+  
 }
 .flex-around{
-  @extend .display-flex;
+  .display-flex;
   justify-content: space-around;
-  align-items: $center;
 }
 .flex-bet{
-  @extend .display-flex;
+  .display-flex;
   justify-content: space-between;
-  align-items: $center;
 }
 .flex-center{
-  @extend .display-flex;
+  .display-flex;
   justify-content: center;
-  align-items: $center;
 }
 .flex-column{
   flex-direction: column;

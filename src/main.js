@@ -8,10 +8,10 @@ import VueRouter from 'vue-router';
 import Vuex from 'vuex';
 import { Button, Field, Toast, NavBar, Loading } from 'vant'
 import 'vant/lib/index.css';
-import '../static/css/main.scss';
+import '../static/css/main.less';
 
 Vue.config.productionTip = false;
-Vue.use(VueRouter);
+Vue.use(VueRouter,Vuex);
 
 import store from './store'
 /* 全局注册组件 */

@@ -77,9 +77,8 @@
   }
 </script>
 
-<style scoped lang="scss">
-  .canvas-wrapper{
-    h3{
+<style scoped>
+  h3{
       text-align: center;
     }
     .canvas-wrapper{
@@ -93,5 +92,4 @@
       border: solid 1px #ccc;
       /*background: #ccc;*/
     }
-  }
 </style>
