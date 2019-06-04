@@ -1,20 +1,19 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
-const store = new Vuex.Store({
-  state: {
-    LOADING: false
+const state = {
+  LOADING: false
+};
+const  mutations = {
+  showLoading(state) {
+    state.LOADING = true
   },
-  mutations: {
-    showLoading(state) {
-      state.LOADING = true
-    },
-    hideLoading(state) {
-      state.LOADING = false
-    }
+  hideLoading(state) {
+    state.LOADING = false
   }
-});
-export default{
-  store
 }
+export default new Vuex.Store({
+  state,
+  mutations
+})
 

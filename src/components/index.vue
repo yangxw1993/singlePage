@@ -62,10 +62,10 @@
       },
 
       showLoading(){
-        this.$store.store.state.LOADING = true;
+        this.$store.commit('showLoading');
         setTimeout(() => {
           console.log(123)
-          this.$store.store.state.LOADING = false;
+          this.$store.commit('hideLoading');
         }, 3000)
       }
     }
