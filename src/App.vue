@@ -14,7 +14,7 @@ export default {
   components:{
     Index,
     Login,
-    Loading
+    Loading,
   },
   computed:{
     LOADING(){

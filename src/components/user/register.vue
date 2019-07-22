@@ -54,7 +54,7 @@
 </template>
 
 <script>
-  import { uerRegister } from '../../assets/server/user'
+import { uerRegister } from '../../assets/server/user'
 export default {
   name: 'login',
   data () {

@@ -9,6 +9,7 @@ import Vuex from 'vuex';
 import { Button, Field, Toast, NavBar, Loading } from 'vant'
 import 'vant/lib/index.css';
 import '../static/css/main.less';
+import MyHeader from './components/common/header'
 
 Vue.config.productionTip = false;
 Vue.use(VueRouter,Vuex);
@@ -19,7 +20,7 @@ Vue.use(Button, Toast);
 Vue.component(Loading.name, Loading); // loading
 Vue.component(NavBar.name, NavBar); // 导航栏
 Vue.component(Field.name, Field); // 文本框
-
+Vue.component('my-header', MyHeader)
 /* 全局使用axios */
 Vue.prototype.$request = axios;
 

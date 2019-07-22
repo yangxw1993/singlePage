@@ -1,5 +1,6 @@
 <template>
   <div class="login">
+    <my-header></my-header>
     <van-nav-bar
       :title=msg
       left-text="返回"
@@ -30,14 +31,9 @@
 </template>
 
 <script>
-  import {NavBar,Field} from 'vant'
-  import { uerRegister } from '../../assets/server/user'
+import { uerRegister } from '../../assets/server/user'
 export default {
   name: 'login',
-  components:{
-    [NavBar.name]: NavBar,
-    [Field.name]: Field
-  },
   data () {
     return {
       msg:'登录页面',
@@ -49,10 +45,6 @@ export default {
 
       userErr:'用户名不能为空',
       passErr:'密码不能为空',
-      formData: {
-        userName: '',
-        password: ''
-      }
     }
   },
   created: function(){

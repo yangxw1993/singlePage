@@ -1,8 +1,6 @@
 <template>
   <div class="container">
-    <header>
-      <h1>Header</h1>
-    </header>
+    <my-header></my-header>
     <div class="main">
       <div class="">
         <input type="text" v-model="sendData" />
@@ -14,6 +12,11 @@
         <van-button type="primary" @click="login">登录</van-button>
         <van-button type="info" @click="register">注册</van-button>
       </div>
+      <div class="btn-wrapper margin-t-10">
+        <router-link to="/demo/problem">
+          <van-button type="primary" @click="login">登录</van-button>
+        </router-link>
+      </div>
       <router-link to="/user/login"><Button type="primary">去登录</Button></router-link>
       <router-link to="/user/register"><Button type="primary">去注册</Button></router-link>
       <router-link to="/list"><Button type="primary">列表页面</Button></router-link>
@@ -22,6 +25,10 @@
     <div class="margin-t-10">
       <van-button type="primary" @click="showLoading">显示</van-button>
     </div>
+    <div id="content" ref="content">
+      <div v-for="item in divList" :key="item.content">{{item.content}}</div>
+    </div>
+    <van-button type="primary" @click="getDivContent">获取div内容</van-button>
   </div>
 </template>
 
@@ -33,13 +40,33 @@
       return {
         msg: 'Welcome to Your Vue.js App',
         sendData: '',
-        getData: ''
+        getData: '',
+        divList: [
+          {
+            content: '内容1'
+          },
+          {
+            content: '内容2'
+          },
+          {
+            content: '内容3'
+          }
+        ]
       }
     },
+    /* components:{
+      "my-header": Header,
+    }, */
     created: function () {
       test_api().then(res => {})
     },
     methods: {
+      getDivContent(){
+        const content = document.getElementById('content');
+        console.log(content.outerHTML,'****', typeof content.outerHTML)
+        let getMenuText = this.$refs.content;
+        console.log(typeof getMenuText.outerHTML, '****', getMenuText.outerHTML)
+      },
       send() {
         if(!this.sendData){
           this.$toast('请填写数据');
