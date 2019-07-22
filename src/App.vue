@@ -9,6 +9,7 @@
 import Login from './components/user/login'
 import Index from './components/index'
 import Loading from './components/loading/loading'
+import { mapState } from 'vuex'
 export default {
   name: 'App',
   components:{
@@ -16,11 +17,14 @@ export default {
     Login,
     Loading,
   },
-  computed:{
+  //  loading 的两种方法
+  /*computed:{
     LOADING(){
-      return this.$store.store.state.LOADING
+      console.log(this.$store)
+      return this.$store.state.LOADING
     }
-  },
+  },*/
+  computed: mapState(['LOADING']),
   methods:{
     goLogin(){
       this.$router.push({path:'/user/login'})
