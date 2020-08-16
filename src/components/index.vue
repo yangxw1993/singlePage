@@ -20,6 +20,7 @@
       <router-link to="/user/login"><Button type="primary">去登录</Button></router-link>
       <router-link to="/user/register"><Button type="primary">去注册</Button></router-link>
       <router-link to="/list"><Button type="primary">列表页面</Button></router-link>
+      <router-link to="/upload"><Button type="primary">上传图片</Button></router-link>
       <router-link to="/demo/canvasEight"><Button type="primary">canvas</Button></router-link>
     </div>
     <div class="margin-t-10">
@@ -33,7 +34,7 @@
 </template>
 
 <script>
-  import { test_api, send, getData } from '../assets/server/test_api.js'
+  import { test_api, send, getData, orderDetail } from '../assets/server/test_api.js'
   export default {
     name: 'hello',
     data() {
@@ -59,8 +60,12 @@
     }, */
     created: function () {
       test_api().then(res => {})
+      this.getOrderDetail()
     },
     methods: {
+      getOrderDetail(){
+        orderDetail('O8202008141434153576').then(res => {})
+      },
       getDivContent(){
         const content = document.getElementById('content');
         console.log(content.outerHTML,'****', typeof content.outerHTML)

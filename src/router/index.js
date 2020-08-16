@@ -5,6 +5,7 @@ import Register from '@/components/user/register'
 import Index from '@/components/index'
 import List from '@/components/list'
 import CanvasEight from '@/components/demo/CanvasEight'
+import Upload from '../views/upload'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/demo/CanvasEight',
       name: 'CanvasEight',
       component: CanvasEight
+    },
+    {
+      path: '/upload',
+      name: 'Upload',
+      component: Upload
     }
   ]
 })
